@@ -1,0 +1,10 @@
+{
+	"departure":"here"
+	,"destination":"there"
+	,"airplane":"foo fighter"
+	,"date":"2014.9.4 16:10:31"
+	,"waypoints":
+	[
+		{"t":"0","x":"-3.8681788","y":"5.597963","z":"7.1234417"}
+	]
+}

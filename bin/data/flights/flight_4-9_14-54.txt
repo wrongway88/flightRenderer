@@ -1,0 +1,2 @@
+"flight": {"departure":"","destination":"","airplane":"","date":"2014.9.4 14:54:26"","waypoints":[
+]}
