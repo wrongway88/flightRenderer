@@ -25,6 +25,9 @@
     <Filter Include="Source Files\utility\logging">
       <UniqueIdentifier>{a521416d-4464-456d-851a-5c50ebcfc502}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\utility\math">
+      <UniqueIdentifier>{37fcdd16-9e04-4544-806c-7e0fcba350b2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\flightDataRenderer.cpp">
@@ -62,6 +65,9 @@
     </ClCompile>
     <ClCompile Include="..\src\parsing\FlightFileParser.cpp">
       <Filter>Source Files\parsing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\data\Acceleration.cpp">
+      <Filter>Source Files\data</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +109,24 @@
     </ClInclude>
     <ClInclude Include="..\src\parsing\FlightFileParser.h">
       <Filter>Source Files\parsing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\data\Acceleration.h">
+      <Filter>Source Files\data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\utility\math\Vector2.h">
+      <Filter>Source Files\utility\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\utility\math\Vector4.h">
+      <Filter>Source Files\utility\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\utility\math\VectorBase.h">
+      <Filter>Source Files\utility\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\utility\math\Vector3.h">
+      <Filter>Source Files\utility\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\utility\Property.h">
+      <Filter>Source Files\utility</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

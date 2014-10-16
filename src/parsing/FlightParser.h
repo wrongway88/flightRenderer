@@ -3,6 +3,9 @@
 
 #include "json/json.h"
 
+#include "data/Acceleration.h"
+#include "data/Waypoint.h"
+
 class FlightParser
 {
 public:
@@ -11,6 +14,8 @@ public:
 private:
 	static void parseFlight(const Json::Value& rootNode);
 	static void parseWaypoints(const Json::Value& waypointsRoot);
+	static Waypoint parseWaypointCoordinate(const Json::Value& waypoint);
+	static Acceleration parseWaypointAcceleration(const Json::Value& waypoint);
 };
 
 #endif // FLIGHT_PARSER_H

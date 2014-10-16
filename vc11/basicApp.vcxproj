@@ -103,6 +103,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\data\Acceleration.cpp" />
     <ClCompile Include="..\src\data\Date.cpp" />
     <ClCompile Include="..\src\data\Flight.cpp" />
     <ClCompile Include="..\src\data\Waypoint.cpp" />
@@ -117,6 +118,7 @@
     <ClCompile Include="..\src\utility\logging\PlainFileLogger.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\data\Acceleration.h" />
     <ClInclude Include="..\src\data\Date.h" />
     <ClInclude Include="..\src\data\Flight.h" />
     <ClInclude Include="..\src\data\Waypoint.h" />
@@ -130,6 +132,11 @@
     <ClInclude Include="..\src\utility\logging\LogManagerImplementation.h" />
     <ClInclude Include="..\src\utility\logging\LogMessage.h" />
     <ClInclude Include="..\src\utility\logging\PlainFileLogger.h" />
+    <ClInclude Include="..\src\utility\math\Vector2.h" />
+    <ClInclude Include="..\src\utility\math\Vector3.h" />
+    <ClInclude Include="..\src\utility\math\Vector4.h" />
+    <ClInclude Include="..\src\utility\math\VectorBase.h" />
+    <ClInclude Include="..\src\utility\Property.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
