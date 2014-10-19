@@ -4,6 +4,9 @@
 #include "json/json.h"
 
 #include "data/Acceleration.h"
+#include "data/Coordinate.h"
+#include "data/Date.h"
+#include "data/Flight.h"
 #include "data/Waypoint.h"
 
 class FlightParser
@@ -13,8 +16,8 @@ public:
 
 private:
 	static void parseFlight(const Json::Value& rootNode);
-	static void parseWaypoints(const Json::Value& waypointsRoot);
-	static Waypoint parseWaypointCoordinate(const Json::Value& waypoint);
+	static std::vector<Waypoint> parseWaypoints(const Json::Value& waypointsRoot);
+	static Coordinate parseWaypointCoordinate(const Json::Value& waypoint);
 	static Acceleration parseWaypointAcceleration(const Json::Value& waypoint);
 };
 

@@ -39,9 +39,6 @@
     <ClCompile Include="..\src\data\Flight.cpp">
       <Filter>Source Files\data</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\data\Waypoint.cpp">
-      <Filter>Source Files\data</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\data\Date.cpp">
       <Filter>Source Files\data</Filter>
     </ClCompile>
@@ -69,15 +66,18 @@
     <ClCompile Include="..\src\data\Acceleration.cpp">
       <Filter>Source Files\data</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\data\Coordinate.cpp">
+      <Filter>Source Files\data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\data\Waypoint.cpp">
+      <Filter>Source Files\data</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\parsing\FlightParser.h">
       <Filter>Source Files\parsing</Filter>
     </ClInclude>
     <ClInclude Include="..\src\data\Flight.h">
-      <Filter>Source Files\data</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\data\Waypoint.h">
       <Filter>Source Files\data</Filter>
     </ClInclude>
     <ClInclude Include="..\src\data\Date.h">
@@ -127,6 +127,12 @@
     </ClInclude>
     <ClInclude Include="..\src\utility\Property.h">
       <Filter>Source Files\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\data\Coordinate.h">
+      <Filter>Source Files\data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\data\Waypoint.h">
+      <Filter>Source Files\data</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

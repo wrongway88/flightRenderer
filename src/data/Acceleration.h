@@ -9,6 +9,8 @@ public:
 	Acceleration(const unsigned int time, const Vec3d acceleration);
 	~Acceleration();
 
+	unsigned int getTime() const;
+
 private:
 	unsigned int m_time;
 	Vec3d m_acceleration;

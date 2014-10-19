@@ -9,3 +9,8 @@ Acceleration::Acceleration(const unsigned int time, const Vec3d acceleration)
 Acceleration::~Acceleration()
 {
 }
+
+unsigned int Acceleration::getTime() const
+{
+	return m_time;
+}

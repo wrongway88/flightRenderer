@@ -1,22 +1,20 @@
 #ifndef WAYPOINT_H
 #define WAYPOINT_H
 
-#include "Date.h"
+#include <vector>
+
+#include "Acceleration.h"
+#include "Coordinate.h"
 
 class Waypoint
 {
 public:
-	Waypoint(const unsigned int time, const double longitude, const double latitude, const double altitude, const double speed);
+	Waypoint(const Coordinate& coordinate, const std::vector<Acceleration>& accelerations);
 	~Waypoint();
 
 private:
-	unsigned int m_time;
-
-	double m_longitude;
-	double m_latitude;
-
-	double m_altitude;
-	double m_speed;
+	Coordinate m_coordinate;
+	std::vector<Acceleration> m_accelerations;
 };
 
 #endif // WAYPOINT_H

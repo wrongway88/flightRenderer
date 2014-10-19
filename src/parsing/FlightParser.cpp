@@ -37,35 +37,54 @@ void FlightParser::parseFlight(const Json::Value& rootNode)
 	message << date;
 	LOG_INFO(message.str());
 
-	parseWaypoints(rootNode["waypoints"]);
+	Flight flight(departure, destination, airplane, Date(date));
+
+	flight.addWaypoints(parseWaypoints(rootNode["waypoints"]));
 }
 
-void FlightParser::parseWaypoints(const Json::Value& waypointsRoot)
+std::vector<Waypoint> FlightParser::parseWaypoints(const Json::Value& waypointsRoot)
 {
 	std::stringstream message;
 	message << "Waypoints has size of ";
 	message << waypointsRoot.size();
 	LOG_INFO(message.str());
 
+	std::vector<Waypoint> waypoints;
+
+	std::vector<Acceleration> accelerations;
+	Coordinate coordinate;
+
 	for(unsigned int i = 0; i < waypointsRoot.size(); i++)
 	{
-		std::stringstream wpMessage;
-		wpMessage << "waypoint size ";
-		wpMessage << waypointsRoot[i].size();
-		LOG_INFO(wpMessage.str());
-		
 		if(waypointsRoot[i].size() == 5)
 		{
-			parseWaypointCoordinate(waypointsRoot[i]);
+			coordinate = parseWaypointCoordinate(waypointsRoot[i]);
 		}
 		else
 		{
-			parseWaypointAcceleration(waypointsRoot[i]);
+			Acceleration acceleration = parseWaypointAcceleration(waypointsRoot[i]);
+
+			if(accelerations.size() > 0 && acceleration.getTime() != accelerations.front().getTime())
+			{
+				waypoints.push_back(Waypoint(coordinate, accelerations));
+
+				accelerations.clear();
+				coordinate = Coordinate();
+			}
+
+			accelerations.push_back(acceleration);
 		}
 	}
+
+	if(accelerations.size() > 0 && coordinate.initialized())
+	{
+		waypoints.push_back(Waypoint(coordinate, accelerations));
+	}
+
+	return waypoints;
 }
 
-Waypoint FlightParser::parseWaypointCoordinate(const Json::Value& waypoint)
+Coordinate FlightParser::parseWaypointCoordinate(const Json::Value& waypoint)
 {
 	std::string sT = waypoint["t"].asString();
 	std::string sLat = waypoint["lat"].asString();
@@ -79,7 +98,7 @@ Waypoint FlightParser::parseWaypointCoordinate(const Json::Value& waypoint)
 	double alt = std::stod(sAlt);
 	double speed = std::stod(sSpeed);
 
-	return Waypoint(t, dLong, lat, alt, speed);
+	return Coordinate(t, dLong, lat, alt, speed);
 }
 
 Acceleration FlightParser::parseWaypointAcceleration(const Json::Value& waypoint)

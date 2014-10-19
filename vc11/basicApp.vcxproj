@@ -106,6 +106,7 @@
     <ClCompile Include="..\src\data\Acceleration.cpp" />
     <ClCompile Include="..\src\data\Date.cpp" />
     <ClCompile Include="..\src\data\Flight.cpp" />
+    <ClCompile Include="..\src\data\Coordinate.cpp" />
     <ClCompile Include="..\src\data\Waypoint.cpp" />
     <ClCompile Include="..\src\flightDataRenderer.cpp" />
     <ClCompile Include="..\src\parsing\FlightFileParser.cpp" />
@@ -121,6 +122,7 @@
     <ClInclude Include="..\src\data\Acceleration.h" />
     <ClInclude Include="..\src\data\Date.h" />
     <ClInclude Include="..\src\data\Flight.h" />
+    <ClInclude Include="..\src\data\Coordinate.h" />
     <ClInclude Include="..\src\data\Waypoint.h" />
     <ClInclude Include="..\src\parsing\FlightFileParser.h" />
     <ClInclude Include="..\src\parsing\FlightParser.h" />
