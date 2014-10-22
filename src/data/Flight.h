@@ -15,6 +15,10 @@ public:
 	void addWaypoint(const Waypoint& waypoint);
 	void addWaypoints(const std::vector<Waypoint>& waypoints);
 
+	unsigned int getWaypointCount() const;
+
+	Waypoint getWaypoint(const unsigned int index) const;
+
 private:
 	std::string m_departure;
 	std::string m_destination;

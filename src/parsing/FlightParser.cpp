@@ -3,26 +3,32 @@
 #include "utility/logging/logging.h"
 #include "utility/math/Vector3.h"
 
-void FlightParser::parseFlight(const std::string& flightData)
+std::shared_ptr<Flight> FlightParser::parseFlight(const std::string& flightData)
 {
 	LOG_INFO("Start flight parsing");
 
 	Json::Value rootNode;
 	Json::Reader reader;
 
+	std::shared_ptr<Flight> flight;
+
 	if(reader.parse(flightData, rootNode))
 	{
-		parseFlight(rootNode);
+		flight = parseFlight(rootNode);
 	}
 	else
 	{
 		LOG_ERROR("Failed to parse flight.");
+
+		LOG_ERROR(reader.getFormatedErrorMessages());
 	}
 
 	LOG_INFO("End flight parsing");
+
+	return flight;
 }
 
-void FlightParser::parseFlight(const Json::Value& rootNode)
+std::shared_ptr<Flight> FlightParser::parseFlight(const Json::Value& rootNode)
 {
 	std::string departure = rootNode["departure"].asString();
 	std::string destination = rootNode["destination"].asString();
@@ -37,9 +43,11 @@ void FlightParser::parseFlight(const Json::Value& rootNode)
 	message << date;
 	LOG_INFO(message.str());
 
-	Flight flight(departure, destination, airplane, Date(date));
+	std::shared_ptr<Flight> flight =  std::make_shared<Flight>(departure, destination, airplane, Date(date));
 
-	flight.addWaypoints(parseWaypoints(rootNode["waypoints"]));
+	flight->addWaypoints(parseWaypoints(rootNode["waypoints"]));
+
+	return flight;
 }
 
 std::vector<Waypoint> FlightParser::parseWaypoints(const Json::Value& waypointsRoot)

@@ -28,6 +28,9 @@
     <Filter Include="Source Files\utility\math">
       <UniqueIdentifier>{37fcdd16-9e04-4544-806c-7e0fcba350b2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\view">
+      <UniqueIdentifier>{9a8f4ccf-e0e4-4b40-8594-3bb10954df8d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\flightDataRenderer.cpp">
@@ -71,6 +74,12 @@
     </ClCompile>
     <ClCompile Include="..\src\data\Waypoint.cpp">
       <Filter>Source Files\data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\view\IFlightViewer.cpp">
+      <Filter>Source Files\view</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\view\FlightViewerSimple.cpp">
+      <Filter>Source Files\view</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +142,15 @@
     </ClInclude>
     <ClInclude Include="..\src\data\Waypoint.h">
       <Filter>Source Files\data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Defines.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\view\IFlightViewer.h">
+      <Filter>Source Files\view</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\view\FlightViewerSimple.h">
+      <Filter>Source Files\view</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

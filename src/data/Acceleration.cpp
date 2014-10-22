@@ -14,3 +14,8 @@ unsigned int Acceleration::getTime() const
 {
 	return m_time;
 }
+
+Vec3d Acceleration::getAcceleration() const
+{
+	return m_acceleration;
+}

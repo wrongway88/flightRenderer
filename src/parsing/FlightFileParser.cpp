@@ -7,9 +7,11 @@
 
 #include "parsing/FlightParser.h"
 
-void FlightFileParser::parseFile(const std::string& filePath)
+std::shared_ptr<Flight> FlightFileParser::parseFile(const std::string& filePath)
 {
 	LOG_INFO("Start parsing fila at " + filePath);
+
+	std::shared_ptr<Flight> flight;
 
 	std::ifstream file;
 	file.open(filePath);
@@ -28,7 +30,7 @@ void FlightFileParser::parseFile(const std::string& filePath)
 
 		if(fileContent.length() > 0)
 		{
-			FlightParser::parseFlight(fileContent);
+			flight = FlightParser::parseFlight(fileContent);
 		}
 		else
 		{
@@ -42,6 +44,8 @@ void FlightFileParser::parseFile(const std::string& filePath)
 		message << filePath;
 		LOG_ERROR(message.str());
 	}
+
+	return flight;
 
 	LOG_INFO("Finished parsing fila at " + filePath);
 }

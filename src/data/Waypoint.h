@@ -12,6 +12,12 @@ public:
 	Waypoint(const Coordinate& coordinate, const std::vector<Acceleration>& accelerations);
 	~Waypoint();
 
+	Coordinate getCoordinate() const;
+
+	unsigned int getAccelerationCount() const;
+	Acceleration getAcceleration(unsigned int index) const;
+	std::vector<Acceleration> getAccelerations() const;
+
 private:
 	Coordinate m_coordinate;
 	std::vector<Acceleration> m_accelerations;

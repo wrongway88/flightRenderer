@@ -11,6 +11,8 @@ public:
 
 	unsigned int getTime() const;
 
+	Vec3d getAcceleration() const;
+
 private:
 	unsigned int m_time;
 	Vec3d m_acceleration;

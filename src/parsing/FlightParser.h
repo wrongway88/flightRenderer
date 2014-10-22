@@ -1,6 +1,8 @@
 #ifndef FLIGHT_PARSER_H
 #define FLIGHT_PARSER_H
 
+#include <memory>
+
 #include "json/json.h"
 
 #include "data/Acceleration.h"
@@ -12,10 +14,10 @@
 class FlightParser
 {
 public:
-	static void parseFlight(const std::string& flightData);
+	static std::shared_ptr<Flight> parseFlight(const std::string& flightData);
 
 private:
-	static void parseFlight(const Json::Value& rootNode);
+	static std::shared_ptr<Flight> parseFlight(const Json::Value& rootNode);
 	static std::vector<Waypoint> parseWaypoints(const Json::Value& waypointsRoot);
 	static Coordinate parseWaypointCoordinate(const Json::Value& waypoint);
 	static Acceleration parseWaypointAcceleration(const Json::Value& waypoint);

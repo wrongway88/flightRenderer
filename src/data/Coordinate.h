@@ -1,6 +1,8 @@
 #ifndef COORDINATE_H
 #define COORDINATE_H
 
+#include "utility/math/Vector3.h"
+
 #include "Date.h"
 
 class Coordinate
@@ -12,6 +14,15 @@ public:
 
 	bool initialized() const;
 
+	double getLongitude() const;
+	double getLatitude() const;
+	double getAltitude() const;
+	double getSpeed() const;
+
+	Vec3d getCartesianCoordinates() const;
+
+	static Vec3d calculateCartesianCoordinates(double latitude, double longitude, double altitude);
+
 private:
 	bool m_initialized;
 
@@ -22,6 +33,8 @@ private:
 
 	double m_altitude;
 	double m_speed;
+
+	Vec3d m_cartesianCoordinates;
 };
 
 #endif // COORDINATE_H

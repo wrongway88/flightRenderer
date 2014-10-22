@@ -52,7 +52,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(CINDER_DIR)\include;$(CINDER_DIR)\boost;C:\Users\Manuel\FH\Masterarbeit\prototyping\flightDataRenderer\src;$(JSONCPP_DIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(CINDER_DIR)\include;$(CINDER_DIR)\boost;..\src;$(JSONCPP_DIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -76,7 +76,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(CINDER_DIR)\include;$(CINDER_DIR)\boost;C:\Users\Manuel\FH\Masterarbeit\prototyping\flightDataRenderer\src;$(JSONCPP_DIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(CINDER_DIR)\include;$(CINDER_DIR)\boost;..\src;$(JSONCPP_DIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader>
@@ -117,6 +117,8 @@
     <ClCompile Include="..\src\utility\logging\LogManager.cpp" />
     <ClCompile Include="..\src\utility\logging\LogManagerImplementation.cpp" />
     <ClCompile Include="..\src\utility\logging\PlainFileLogger.cpp" />
+    <ClCompile Include="..\src\view\FlightViewerSimple.cpp" />
+    <ClCompile Include="..\src\view\IFlightViewer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\data\Acceleration.h" />
@@ -124,6 +126,7 @@
     <ClInclude Include="..\src\data\Flight.h" />
     <ClInclude Include="..\src\data\Coordinate.h" />
     <ClInclude Include="..\src\data\Waypoint.h" />
+    <ClInclude Include="..\src\Defines.h" />
     <ClInclude Include="..\src\parsing\FlightFileParser.h" />
     <ClInclude Include="..\src\parsing\FlightParser.h" />
     <ClInclude Include="..\src\utility\logging\ConsoleLogger.h" />
@@ -139,6 +142,8 @@
     <ClInclude Include="..\src\utility\math\Vector4.h" />
     <ClInclude Include="..\src\utility\math\VectorBase.h" />
     <ClInclude Include="..\src\utility\Property.h" />
+    <ClInclude Include="..\src\view\FlightViewerSimple.h" />
+    <ClInclude Include="..\src\view\IFlightViewer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
